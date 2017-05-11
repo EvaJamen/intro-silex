@@ -9,6 +9,11 @@ $app = new Silex\Application();
 //détaille les erreurs
 $app['debug'] = true; //tableau associatif : $variable[tableau]
 
+// Services
+$app->register(new Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => __DIR__.'/../views',
+));
+
 // Create `hello` route
 $app->get('/hello', function()
 {
@@ -21,8 +26,8 @@ $app->get('/page/{number}', function ($number)
     return 'Page number : '.$number;
 })
 ->assert('number', '\d+')
-->value('number', '1');
-
+->value('number', '1')
+->bind('page');
 
 // Run Silex
 $app->run();
