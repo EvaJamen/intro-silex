@@ -9,10 +9,28 @@ $app = new Silex\Application();
 //détaille les erreurs
 $app['debug'] = true; //tableau associatif : $variable[tableau]
 
+
+
 // Services
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__.'/../views',
 ));
+
+$app->get('/hello', function() use ($app)
+{
+
+    $data = array(
+        'value' => 'Toto',
+		'lorem' => array(
+		'foo' => 'bar'
+	)
+    );
+
+    return $app['twig']->render('example.twig', $data);
+})
+->bind('hello');
+
+
 
 // Create `hello` route
 $app->get('/hello', function()
@@ -28,6 +46,11 @@ $app->get('/page/{number}', function ($number)
 ->assert('number', '\d+')
 ->value('number', '1')
 ->bind('page');
+
+
+
+
+
 
 // Run Silex
 $app->run();
