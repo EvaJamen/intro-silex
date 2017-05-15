@@ -5,11 +5,14 @@
     <title>Document</title>
 </head>
 <body>
-   <!-- alt+n ~ tilde -->
-   
+   <!-- ~ alt+n tilde : sert à remplacer les parenthèses-->
     {% for key, item in values %}
         <div>{{ key ~ ' = ' ~ item }}</div>
     {% endfor %}
-    
+	<!-- ~On dit de combien on veut indenter-->
+    {% for index in range(0, 10, 2) %}
+        <div>{{ index }}</div>
+    {% endfor %}
+</body>
 </body>
 </html>
