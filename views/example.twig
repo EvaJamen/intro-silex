@@ -10,8 +10,8 @@
 
     {% set toto = 'coucou' %}
     {{ toto }}
-    
-<a href="{{ url('hello') }}">Hello</a>
-{{ url('hello', {number:2}) }}
+
+    <a href="{{ url('hello') }}">Hello</a>
+    {{ url('page', {number: 2}) }}<!--une histoire d'url qui renvoie vers des pages... Pas trop compris-->
 
 {{ include('partials/footer.twig') }}

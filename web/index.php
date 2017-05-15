@@ -23,14 +23,13 @@ $app->get('/hello', function() use ($app)
 
     return $app['twig']->render('example.twig', $data);
 })
-->bind('hello'); //sert à donner une route
+->bind('hello'); //sert à donner une route?
 
 $app->get('/page/{number}', function($number)
 {
     return 'Page: '.$number;
 })
 ->assert('number', '\d+')
-->value('number', 1)
 ->bind('page');
 
 $app->run();
