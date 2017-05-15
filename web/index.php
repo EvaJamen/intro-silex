@@ -23,7 +23,7 @@ $app->get('/hello', function() use ($app)
 
     return $app['twig']->render('example.twig', $data);
 })
-->bind('hello');
+->bind('hello'); //sert à donner une route
 
 $app->get('/page/{number}', function($number)
 {

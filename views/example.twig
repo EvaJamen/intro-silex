@@ -10,5 +10,8 @@
 
     {% set toto = 'coucou' %}
     {{ toto }}
+    
+<a href="{{ url('hello') }}">Hello</a>
+{{ url('hello', {number:2}) }}
 
 {{ include('partials/footer.twig') }}
