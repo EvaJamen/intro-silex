@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-   <!-- ~ alt+n tilde : sert à remplacer les parenthèses-->
+{{ include('partials/header.twig') }}
+
     {% for key, item in values %}
         <div>{{ key ~ ' = ' ~ item }}</div>
     {% endfor %}
@@ -16,6 +10,5 @@
 
     {% set toto = 'coucou' %}
     {{ toto }}
-</body>
-</body>
-</html>
+
+{{ include('partials/footer.twig') }}
