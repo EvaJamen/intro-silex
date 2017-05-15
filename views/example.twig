@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-	</head>
-	<body>
-			<!-- clé du tableau associatif vu dans la partie Services du index.php -->
-			Coucou : {{ lorem.foo }}
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <!-- alt+n ~ tilde -->
+   
+    {% for key, item in values %}
+        <div>{{ key ~ ' = ' ~ item }}</div>
+    {% endfor %}
+    
+</body>
 </html>
